@@ -10,7 +10,6 @@ class Integer
   end
 end
 
-
 class TrueClass
   def to_bool
     self
