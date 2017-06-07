@@ -1,6 +1,6 @@
 class String
   def to_bool
-    %w{ 1 true yes t }.include? self.downcase
+    %w{ 1 true yes t ok enabled agreed in }.include? self.downcase
   end
 end
 

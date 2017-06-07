@@ -3,42 +3,61 @@ Bundler.require
 
 describe "String" do
   it "is true if yes" do
-    "yes".to_bool.should eq true
+    expect("yes".to_bool).to eq true
   end
   
   it "is true if '1'" do
-    "1".to_bool.should eq true
+    expect("1".to_bool).to eq true
   end
   
   it "is true if 'true'" do
-    "true".to_bool.should eq true
+    expect("true".to_bool).to eq true
+  end
+
+  it "is true if 'ok'" do
+    expect("ok".to_bool).to eq true
+  end
+
+  it "is true if 'enabled'" do
+    expect("enabled".to_bool).to eq true
+  end
+
+  it "is true if 'agreed'" do
+    expect("agreed".to_bool).to eq true
+  end
+
+  it "is true if 'in'" do
+    expect("in".to_bool).to eq true
   end
   
   it "is false otherwise" do
-    "no".to_bool.should eq false
-    "false".to_bool.should eq false
-    "0".to_bool.should eq false
+    expect("no".to_bool).to eq false
+    expect("false".to_bool).to eq false
+    expect("0".to_bool).to eq false
+    expect("disabled".to_bool).to eq false
+    expect("disagreed".to_bool).to eq false
+    expect("out".to_bool).to eq false
   end
 end
 
 describe "Integer" do
   it "is true if 1" do
-    1.to_bool.should eq true
+    expect(1.to_bool).to eq true
   end
   
   it "is false otherwise" do
-    0.to_bool.should eq false
+    expect(0.to_bool).to eq false
   end
 end
 
 describe "TrueClass" do
   it "is true" do
-    true.to_bool.should eq true
+    expect(true.to_bool).to eq true
   end
 end
 
 describe "Object" do
   it "is false by default" do
-    Object.new.to_bool.should eq false
+    expect(Object.new.to_bool).to eq false
   end
 end
